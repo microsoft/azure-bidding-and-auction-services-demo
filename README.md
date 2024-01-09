@@ -1,14 +1,16 @@
-# Project
+# Azure Privacy Sandbox Demo
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This repository is a sample of how to locally run Azure's Privacy Sandbox implementation, which conists of the following components:
 
-As the maintainer of this project, please make a few updates:
+- [Bidding and Auction Services](https://github.com/privacysandbox/bidding-auction-servers)
+  
+  This code is maintained by Google and will have contributions from Microsoft.
+  It also depends on another Google maintained repository with Microsoft contributions called [Data Plane Shared Libraries](https://github.com/privacysandbox/data-plane-shared-libraries)
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+- Key Management Service (KMS)
+
+  Written by Microsoft, based on the [Confidential Consortium Framework (CCF)](https://github.com/microsoft/ccf)
+  Currently closed source, but with plans to open source
 
 ## Contributing
 

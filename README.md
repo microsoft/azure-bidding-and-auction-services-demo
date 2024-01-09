@@ -9,8 +9,8 @@ This repository is a sample of how to locally run Azure's Privacy Sandbox implem
 
 - Key Management Service (KMS)
 
-  Written by Microsoft, based on the [Confidential Consortium Framework (CCF)](https://github.com/microsoft/ccf)
-  Currently closed source, but with plans to open source
+  Written by Microsoft, based on the [Confidential Consortium Framework (CCF)](https://github.com/microsoft/ccf).
+  The KMS is currently closed source, but with plans to open source.
 
 ## Contributing
 

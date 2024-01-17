@@ -5,6 +5,12 @@ fi
 
 REPO_PATH=$(realpath $(dirname "$0")/..)
 
+# Check port 8000 is free
+if lsof -i :8000 > /dev/null 2>&1; then
+    echo "Port 8000 is not free, please stop any process using it and try again"
+    exit 1
+fi
+
 # Start KMS inside a CCF container
 echo "Running KMS inside docker container..."
 CONTAINER_ID=$(docker run \

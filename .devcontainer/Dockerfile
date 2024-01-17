@@ -39,7 +39,6 @@ RUN \
 ENV PATH="/opt/bin:${PATH}:/usr/local/go/bin" \
     PYTHON_LIB_PATH="/usr/lib/python3.9"
 
-# Custom Deps
 RUN apt-get update && apt-get install -y \
     openssh-client \
     make \

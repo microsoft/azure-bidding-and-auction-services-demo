@@ -24,15 +24,15 @@ echo "Adding Key to KMS..."
 docker exec $CONTAINER_ID /bin/bash -c "make setup" > /dev/null 2>&1
 echo "Key added"
 
-# # Run the B&A servers
-# (
-#     cd $DEMO_WORKSPACE/bidding-auction-servers
-#     source ./env
-#     ./bazel-bin/services/bidding_service/server --init_config_client="true" &
-#     ./bazel-bin/services/buyer_frontend_service/server --init_config_client="true" &
-#     ./bazel-bin/services/auction_service/server --init_config_client="true" &
-#     ./bazel-bin/services/seller_frontend_service/server --init_config_client="true" &
-# )
+# Run the B&A servers
+(
+    cd $DEMO_WORKSPACE/bidding-auction-servers
+    source ./env
+    ./bazel-bin/services/bidding_service/server --init_config_client="true" &
+    ./bazel-bin/services/buyer_frontend_service/server --init_config_client="true" &
+    ./bazel-bin/services/auction_service/server --init_config_client="true" &
+    ./bazel-bin/services/seller_frontend_service/server --init_config_client="true" &
+)
 
 # Wait until the user presses Ctrl+C
 cleanup() {
@@ -44,7 +44,6 @@ cleanup() {
 
     exit 0
 }
-
 echo "B&A services are running, press Ctrl+C to stop..."
 trap cleanup SIGINT
 while true; do

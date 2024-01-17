@@ -1,0 +1,120 @@
+export ENABLE_ENCRYPTION="true" # default:false
+export PUBLIC_KEY_ENDPOINT="https://127.0.0.1:8000/app/listpubkeys"
+export PRIMARY_COORDINATOR_PRIVATE_KEY_ENDPOINT="https://127.0.0.1:8000/app/key?fmt=tink"
+export SECONDARY_COORDINATOR_PRIVATE_KEY_ENDPOINT=""
+export PRIMARY_COORDINATOR_ACCOUNT_IDENTITY=""
+export SECONDARY_COORDINATOR_ACCOUNT_IDENTITY=""
+export PRIMARY_COORDINATOR_REGION=""
+export SECONDARY_COORDINATOR_REGION=""
+export GCP_PRIMARY_WORKLOAD_IDENTITY_POOL_PROVIDER=""
+export GCP_SECONDARY_WORKLOAD_IDENTITY_POOL_PROVIDER=""
+export GCP_PRIMARY_KEY_SERVICE_CLOUD_FUNCTION_URL=""
+export GCP_SECONDARY_KEY_SERVICE_CLOUD_FUNCTION_URL=""
+export PRIVATE_KEY_CACHE_TTL_SECONDS="3888000" # default:3888000
+export KEY_REFRESH_FLOW_RUN_FREQUENCY_SECONDS="10800" # default:10800
+export TELEMETRY_CONFIG="mode: EXPERIMENT"
+export TEST_MODE="false"
+export ROMA_TIMEOUT_MS=""
+export COLLECTOR_ENDPOINT=""
+export CONSENTED_DEBUG_TOKEN=""
+export ENABLE_OTEL_BASED_LOGGING="false" # default:false
+export ENABLE_PROTECTED_APP_SIGNALS="false" # default:false
+export PS_VERBOSITY="10"
+export MAX_ALLOWED_SIZE_DEBUG_URL_BYTES="1" # default:1
+export MAX_ALLOWED_SIZE_ALL_DEBUG_URLS_KB="1" # default:1
+
+# Bidding Service
+export BIDDING_PORT="50057"
+# This is not set in the Google's infrastructur, but we need this to run the service with a non-root user.
+# I believe https://github.com/privacysandbox/bidding-auction-servers/pull/7 will solve it.
+# If we don't set it (= let the parameter client return "not found" error), the service returns an error complaiing about it.
+# If we set an empty string, it tries to launch a server for "0.0.0.0:" (with ':', but no port), which somehow requires root priviledge.
+# I guess that's what's happing with B&A's start_bidding command.
+export AUCTION_HEALTHCHECK_PORT="50050"
+export BIDDING_HEALTHCHECK_PORT="50050"
+export ENABLE_BIDDING_SERVICE_BENCHMARK="true"
+export BUYER_CODE_FETCH_CONFIG='{
+    "biddingJsPath": "",
+    "biddingJsUrl": "https://td.doubleclick.net/td/bjs",
+    "protectedAppSignalsBiddingJsUrl": "https://td.doubleclick.net/td/bjs",
+    "biddingWasmHelperUrl": "",
+    "protectedAppSignalsBiddingWasmHelperUrl": "",
+    "urlFetchPeriodMs": 13000000,
+    "urlFetchTimeoutMs": 30000,
+    "enableBuyerDebugUrlGeneration": true,
+    "enableAdtechCodeLogging": false,
+    "prepareDataForAdsRetrievalJsUrl": "",
+    "prepareDataForAdsRetrievalWasmHelperUrl": ""
+}'
+export JS_NUM_WORKERS="4"
+export JS_WORKER_QUEUE_LEN="100"
+export AD_RETRIEVAL_KV_SERVER_ADDR=""
+export BYOS_AD_RETRIEVAL_SERVER="true"
+export AD_RETRIEVAL_TIMEOUT_MS="60000"
+
+# Buyer Frontend
+export BUYER_FRONTEND_PORT="50051"
+export BUYER_FRONTEND_HEALTHCHECK_PORT="50050"
+export BIDDING_SERVER_ADDR="127.0.0.1:50057"
+export BUYER_KV_SERVER_ADDR="https://wonderful-smoke-f7f0a95bd29f428f8933d258d315c801.azurewebsites.net"
+export GENERATE_BID_TIMEOUT_MS="60000"
+export PROTECTED_APP_SIGNALS_GENERATE_BID_TIMEOUT_MS="60000"
+export BIDDING_SIGNALS_LOAD_TIMEOUT_MS="60000"
+export ENABLE_BUYER_FRONTEND_BENCHMARKING="true"
+export CREATE_NEW_EVENT_ENGINE="false"
+export ENABLE_BIDDING_COMPRESSION="true" # default:true
+export BFE_INGRESS_TLS=""
+export BFE_TLS_KEY=""
+export BFE_TLS_CERT=""
+export BIDDING_EGRESS_TLS=""
+
+# Auction Service
+export AUCTION_PORT="50061"
+# This is not set in the Google's infrastructur, but we need this to run the service with a non-root user.
+# I believe https://github.com/privacysandbox/bidding-auction-servers/pull/7 will solve it.
+# If we don't set it (= let the parameter client return "not found" error), the service returns an error complaiing about it.
+# If we set an empty string, it tries to launch a server for "0.0.0.0:" (with ':', but no port), which somehow requires root priviledge.
+# I guess that's what's happing with B&A's start_auction command.
+export AUCTION_HEALTHCHECK_PORT="50050"
+export ENABLE_AUCTION_SERVICE_BENCHMARK="true"
+export SELLER_CODE_FETCH_CONFIG='{
+    "auctionJsPath": "",
+    "auctionJsUrl": "https://pubads.g.doubleclick.net/td/sjs",
+    "urlFetchPeriodMs": 13000000,
+    "urlFetchTimeoutMs": 30000,
+    "enableSellerDebugUrlGeneration": false,
+    "enableAdtechCodeLogging": false,
+    "enableReportResultUrlGeneration": true,
+    "enableReportWinUrlGeneration": true,
+    "buyerReportWinJsUrls": {"https://td.doubleclick.net":"https://td.doubleclick.net/td/bjs"},
+    "protectedAppSignalsBuyerReportWinJsUrls": {"https://td.doubleclick.net":"https://storage.googleapis.com/wasm-explorer/PAS/PASreportWin.js"}
+}'
+export JS_NUM_WORKERS="4"
+export JS_WORKER_QUEUE_LEN="100"
+export ENABLE_REPORT_WIN_INPUT_NOISING="false"
+
+# Seller Frontend
+export SELLER_FRONTEND_PORT="50053"
+export SELLER_FRONTEND_HEALTHCHECK_PORT="50050"
+export GET_BID_RPC_TIMEOUT_MS="60000"
+export KEY_VALUE_SIGNALS_FETCH_RPC_TIMEOUT_MS="60000"
+export SCORE_ADS_RPC_TIMEOUT_MS="60000"
+export SELLER_ORIGIN_DOMAIN="https://securepubads.g.doubleclick.net"
+export AUCTION_SERVER_HOST="127.0.0.1:50061"
+export KEY_VALUE_SIGNALS_HOST="https://pubads.g.doubleclick.net/td/sts"
+export BUYER_SERVER_HOSTS='{
+  "https://td.doubleclick.net": {
+    "url": "127.0.0.1:50051",
+    "cloudPlatform": "LOCAL"
+  }
+}'
+export ENABLE_BUYER_COMPRESSION=""
+export ENABLE_AUCTION_COMPRESSION=""
+export ENABLE_SELLER_FRONTEND_BENCHMARKING="true"
+export CREATE_NEW_EVENT_ENGINE="false"
+export SFE_INGRESS_TLS=""
+export SFE_TLS_KEY=""
+export SFE_TLS_CERT=""
+export AUCTION_EGRESS_TLS=""
+export BUYER_EGRESS_TLS=""
+export SFE_PUBLIC_KEYS_ENDPOINTS="{\"AZURE\": \"https://127.0.0.1:8000/app/listpubkeys\"}"

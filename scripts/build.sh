@@ -15,7 +15,7 @@ fi
 (
     cd $DEMO_WORKSPACE/azure-privacy-sandbox-kms
     docker build \
-        --build-arg BASE_CCF_IMAGE=CCF_VERSION \
+        --build-arg BASE_CCF_IMAGE=$CCF_VERSION \
         -t kms \
         -f .devcontainer/Dockerfile.devcontainer .
 )
@@ -34,5 +34,6 @@ fi
         //bidding_service:server \
         //buyer_frontend_service:server \
         //tools/secure_invoke:invoke \
-        --config=azure_azure --//:build_flavor=non_prod
+        --//:build_flavor=non_prod \
+        # TODO: Uncomment when our code is in KenGordon fork --config=azure_azure
 )

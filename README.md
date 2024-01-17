@@ -1,5 +1,16 @@
 # Azure Privacy Sandbox Demo
 
+- [Overview](#Overview)
+- [Running Demo](#Running-Demo)
+  - [Initial Setup](#Initial-Setup)
+  - [Building](#Building)
+  - [Running](#Running)
+  - [Issuing Requests](#Issuing-Requests)
+- [Contributing](#Contributing)
+- [Trademarks](#Trademarks)
+
+## Overview
+
 This repository is a sample of how to locally run Azure's Privacy Sandbox implementation, which consists of the following components:
 
 - [Bidding and Auction Servers](https://github.com/privacysandbox/bidding-auction-servers)
@@ -7,22 +18,53 @@ This repository is a sample of how to locally run Azure's Privacy Sandbox implem
   This code is maintained by Google and will have contributions from Microsoft.
   It also depends on another Google maintained repository with Microsoft contributions called [Data Plane Shared Libraries](https://github.com/privacysandbox/data-plane-shared-libraries)
 
-- Key Management Service (KMS)
+- [Key Management Service (KMS)](https://github.com/microsoft/azure-privacy-sandbox-kms)
 
   Written by Microsoft, based on the [Confidential Consortium Framework (CCF)](https://github.com/microsoft/ccf).
   The KMS is currently closed source, but with plans to open source.
+  
+## Running Demo
 
-## Running the Demo
+### Prerequisites
 
-First, you can set the `WORKSPACE` environment variable to configure where the KMS and B&A server code is checked out to.
 
-When the repository is first checked out, run [setup.sh](scripts/setup.sh) to do initial setup, this script does the following:
+
+### Initial Setup
+
+First, you can set the `DEMO_WORKSPACE` environment variable to configure where the KMS and B&A server code is checked out to.
+
+Then, run [setup.sh](scripts/setup.sh)
+
+```
+./scripts/setup.sh
+```
+This does the following:
 - Checks out the Microsoft fork of the Bidding and Auction Servers and the Data Plane Shared Libraries
 - Checks out the Key Management System
 
-To build the demo, run [build.sh](scripts/build.sh)
+### Building
 
-To run the demo, run [run.sh](scripts/run.sh)
+To build the demo, run [build.sh](scripts/build.sh)
+```
+./scripts/build.sh
+```
+
+This builds a docker image for the KMS and uses Bazel to build the B&A server code.
+
+### Running
+
+To run the B&A servers and the KMS, run [run.sh](scripts/run.sh).
+```
+./scripts/run.sh
+```
+
+This runs the KMS docker container, and the Bidding and Auction servers. While this is running you can issue requests in a second terminal.
+
+### Issuing Requests
+You can issue requests with [request.sh](scripts/request.sh).
+```
+TARGET_SERVICE=bfe REQUEST_PATH=requests/get_bids_request.json ./scripts/request.sh
+```
 
 ## Contributing
 

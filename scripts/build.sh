@@ -15,7 +15,7 @@ fi
 (
     cd $DEMO_WORKSPACE/azure-privacy-sandbox-kms
     docker build \
-        --build-arg BASE_CCF_IMAGE=$CCF_VERSION \
+        --build-arg BASE_CCF_IMAGE=$CCF_VERSION-virtual \
         -t kms \
         -f .devcontainer/Dockerfile.devcontainer .
 )

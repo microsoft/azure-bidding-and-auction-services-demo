@@ -27,7 +27,9 @@ This repository is a sample of how to locally run Azure's Privacy Sandbox implem
 
 ### Prerequisites
 
+Opening this repository in a codespace or opening the [devcontainer](.devcontainer/devcontainer.json) will automatically have all the required dependencies.
 
+Alternatively, you can run the parts of the devcontainer [Dockerfile](.devcontainer/Dockerfile) manually to setup your environment.
 
 ### Initial Setup
 

@@ -47,7 +47,6 @@ RUN apt-get update && apt-get install -y \
     jq \
     lsof \
     sudo \
-    python3.8-venv \
-    nc
+    python3.8-venv
 
 ENV USE_CBUILD=0

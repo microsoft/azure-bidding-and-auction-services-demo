@@ -7,17 +7,11 @@ if [ -z "$USE_CBUILD" ]; then
     USE_CBUILD=1
 fi
 
-if [ -z "$CCF_VERSION" ]; then
-    CCF_VERSION="5.0.0-dev10"
-fi
-
 # Build KMS
 (
     cd $DEMO_WORKSPACE/azure-privacy-sandbox-kms
-    docker build \
-        --build-arg BASE_CCF_IMAGE=$CCF_VERSION-virtual \
-        -t kms \
-        -f .devcontainer/Dockerfile.devcontainer .
+    npm install
+    make build
 )
 
 # Build B&A Servers

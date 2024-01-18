@@ -1,3 +1,6 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT license.
+
 export ENABLE_ENCRYPTION="true" # default:false
 export PUBLIC_KEY_ENDPOINT="https://127.0.0.1:8000/app/listpubkeys"
 export PRIMARY_COORDINATOR_PRIVATE_KEY_ENDPOINT="https://127.0.0.1:8000/app/key?fmt=tink"

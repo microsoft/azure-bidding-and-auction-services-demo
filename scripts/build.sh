@@ -1,3 +1,5 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT license.
 
 if [ -z "$DEMO_WORKSPACE" ]; then
     DEMO_WORKSPACE=~/demo

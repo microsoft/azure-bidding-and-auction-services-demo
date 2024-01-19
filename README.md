@@ -54,7 +54,7 @@ To build the demo, run [build.sh](scripts/build.sh)
 ./scripts/build.sh
 ```
 
-This builds a docker image for the KMS and uses Bazel to build the B&A server code.
+This builds the KMS and the Bidding and Auction server code.
 
 ### Running
 
@@ -63,7 +63,7 @@ To run the B&A servers and the KMS, run [run.sh](scripts/run.sh).
 ./scripts/run.sh
 ```
 
-This runs the KMS docker container, and the Bidding and Auction servers. While this is running you can issue requests in a second terminal.
+This runs the KMS and the Bidding and Auction servers. While this is running you can issue requests in a second terminal.
 
 ### Issuing Requests
 You can issue requests with [request.sh](scripts/request.sh).

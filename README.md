@@ -1,7 +1,4 @@
-# Azure Privacy Sandbox Demo
-
-- [Overview](#Overview)
-- [Running Demo](#Running-Demo)
+# Azure Bidding & Auction Services Demo
   - [Initial Setup](#Initial-Setup)
   - [Building](#Building)
   - [Running](#Running)

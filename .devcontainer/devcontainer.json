@@ -1,5 +1,5 @@
 {
-    "name": "Azure Privacy Sandbox Demo",
+    "name": "Azure Bidding & Auction Services Demo",
     "build": {
         "dockerfile": "Dockerfile",
         "context": ".."

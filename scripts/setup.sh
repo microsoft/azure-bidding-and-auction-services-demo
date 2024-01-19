@@ -35,8 +35,7 @@ REPO_PATH=$(realpath $(dirname "$0")/..)
 
 # Checkout KMS code
 if [ ! -d "$DEMO_WORKSPACE/azure-privacy-sandbox-kms" ]; then
-    git clone git@github.com:microsoft/azure-privacy-sandbox-kms.git $DEMO_WORKSPACE/azure-privacy-sandbox-kms # TODO: When repo is public, use https
-    # git clone https://github.com/microsoft/azure-privacy-sandbox-kms $DEMO_WORKSPACE/azure-privacy-sandbox-kms
+    git clone https://github.com/microsoft/azure-privacy-sandbox-kms $DEMO_WORKSPACE/azure-privacy-sandbox-kms
     (cd $DEMO_WORKSPACE/azure-privacy-sandbox-kms && git checkout $KMS_REV)
 else
     echo "KMS already checked out"

@@ -43,8 +43,9 @@ Then, run [setup.sh](scripts/setup.sh)
 ./scripts/setup.sh
 ```
 This does the following:
-- Checks out the Microsoft fork of the Bidding and Auction Servers and the Data Plane Shared Libraries
+- Installs CCF
 - Checks out the Key Management System
+- Checks out the Microsoft fork of the Bidding and Auction Servers and the Data Plane Shared Libraries
 
 ### Building
 

@@ -1,0 +1,69 @@
+{
+  "auction_config": {
+    "seller_signals": "{\"seller_signal\": \"1694637288033082608\"}",
+    "auction_signals": "{\"auction_signal\": \"1694637288033083263\"}",
+    "buyer_list": [
+      "http://ad_tech_A.com",
+      "http://ad_tech_B.com"
+    ],
+    "seller": "https://securepubads.g.doubleclick.net",
+    "per_buyer_config": {
+      "http://ad_tech_B.com": {
+        "buyer_signals": "1694637288033085483"
+      },
+      "http://ad_tech_A.com": {
+        "buyer_signals": "1694637288033084208"
+      }
+    },
+    "buyer_timeout_ms": 1000
+  },
+  "raw_protected_audience_input": {
+    "generation_id":  "sample-generation-id",
+    "publisher_name": "cnn.com",
+    "raw_buyer_input": {
+      "http://ad_tech_A.com": {
+        "interest_groups": [
+          {
+            "name": "1694623127714473917",
+            "bidding_signal_keys": [
+              "1694623127714474255"
+            ],
+            "ad_render_ids": [
+              "ad_render_id_1694623127714474743",
+              "ad_render_id_1694623127714475238",
+              "ad_render_id_1694623127714475753",
+              "ad_render_id_1694623127714476128"
+            ],
+            "user_bidding_signals": "{\"years\": [1776, 1868], \"name\": \"winston\", \"someId\": 1789}",
+            "browser_signals": {
+              "joinCount": "3",
+              "bidCount": "18",
+              "recency": "1694623127",
+              "prevWins": "[[1694623127,\"ad_render_id_1694623127714474743\"],[1694623127,\"ad_render_id_1694623127714475238\"],[1694623127,\"ad_render_id_1694623127714475753\"],[1694623127,\"ad_render_id_1694623127714476128\"]]"
+            }
+          },
+          {
+            "name": "1694623127714477954",
+            "bidding_signals_keys": [
+              "1694623127714478259"
+            ],
+            "ad_render_ids": [
+              "ad_render_id_1694623127714478684",
+              "ad_render_id_1694623127714479089",
+              "ad_render_id_1694623127714479472",
+              "ad_render_id_1694623127714479800"
+            ],
+            "user_bidding_signals": "{\"years\": [1776, 1868], \"name\": \"winston\", \"someId\": 1789}",
+            "browser_signals": {
+              "joinCount": "3",
+              "bidCount": "18",
+              "recency": "1694623127",
+              "prevWins": "[[1694623127,\"ad_render_id_1694623127714478684\"],[1694623127,\"ad_render_id_1694623127714479089\"],[1694623127,\"ad_render_id_1694623127714479472\"],[1694623127,\"ad_render_id_1694623127714479800\"]]"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "clientType": "BROWSER"
+}

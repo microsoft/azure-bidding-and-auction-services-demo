@@ -16,7 +16,7 @@ fi
 # Start KMS 
 (
     cd $DEMO_WORKSPACE/azure-privacy-sandbox-kms
-    env -i PATH=$PATH make start-host &
+    env -i PATH=$PATH /opt/ccf_virtual/bin/sandbox.sh --js-app-bundle ./dist/ --initial-member-count 3 --initial-user-count 1 --constitution ./governance/constitution/kms_actions.js -v --http2 &
 )
 
 # Wait for the KMS to start
@@ -50,7 +50,7 @@ declare -A service_pid
 
 # Wait until the user presses Ctrl+C
 cleanup() {
-    pkill -f "make start-host" > /dev/null 2>&1
+    pkill -f "python /opt/ccf_virtual/bin/start_network.py" > /dev/null 2>&1
     pkill -f "./bazel-bin/services" > /dev/null 2>&1
     exit 0
 }

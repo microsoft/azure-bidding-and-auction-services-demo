@@ -25,6 +25,7 @@ while ! [[ $response_code -eq 400 ]]; do
     sleep 1
     response_code=$(curl https://127.0.0.1:8000/app/listpubkeys -k -s -o /dev/null -w "%{http_code}")
 done
+sleep 3 # Allow CCF to finish spinning up
 
 # Add a key to the KMS
 echo "Adding Key to KMS..."

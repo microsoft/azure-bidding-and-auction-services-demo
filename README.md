@@ -96,7 +96,7 @@ You can issue requests with [request.sh](scripts/request.sh).
 |------|-------------|---------|
 | `DEMO_WORKSPACE` | `~/demo` | Path to the directory where the running KMS and B&A code is |
 | `TARGET_SERVICE` | `bfe` | The service to send the request to |
-| `REQUEST_PATH` | `requests/get_bids_request` | The path to the request to send (relative to repository root) |
+| `REQUEST_PATH` | `requests/get_bids_request.json` | The path to the request to send (relative to repository root) |
 
 ## Contributing
 

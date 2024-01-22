@@ -31,5 +31,5 @@ fi
         //services/buyer_frontend_service:server \
         //tools/secure_invoke:invoke \
         --//:build_flavor=non_prod \
-        # TODO: Uncomment when our code is in KenGordon fork --config=azure_azure
+        --config=azure_azure
 )

@@ -13,7 +13,7 @@ if lsof -i :8000 > /dev/null 2>&1; then
     exit 1
 fi
 
-# Start KMS 
+# Start KMS
 (
     cd $DEMO_WORKSPACE/azure-privacy-sandbox-kms
     env -i PATH=$PATH /opt/ccf_virtual/bin/sandbox.sh --js-app-bundle ./dist/ --initial-member-count 3 --initial-user-count 1 --constitution ./governance/constitution/kms_actions.js -v --http2 &

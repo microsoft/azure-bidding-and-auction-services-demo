@@ -10,7 +10,7 @@ if [ -z "$CCF_VERSION" ]; then
 fi
 
 if [ -z "$KMS_REV" ]; then
-    KMS_REV="beejones/initial-setup"
+    KMS_REV="main"
 fi
 
 if [ -z "$BA_REV" ]; then

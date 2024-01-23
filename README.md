@@ -48,7 +48,7 @@ This does the following:
 |------|-------------|---------|
 | `DEMO_WORKSPACE` | `~/demo` | Path to the directory where `setup.sh` will checkout the KMS and B&A code |
 | `CCF_VERSION` | `5.0.0-dev10` | Version of CCF to run the KMS against |
-| `KMS_REV` | `beejones/initial-setup` | Revision of the KMS to checkout |
+| `KMS_REV` | `main` | Revision of the KMS to checkout |
 | `BA_REV` | `main` | Revision of the B&A Services to checkout |
 | `DATA_PLANE_REV` | `main` | Revision of the Data Plance Shared Libraries to checkout |
 

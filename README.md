@@ -2,12 +2,10 @@
 
 This repository is a sample of how to locally run Azure's [Bidding and Auction Servers](https://github.com/privacysandbox/bidding-auction-servers) implementation. 
 
-This code is maintained by Google and will have contributions from Microsoft.
+This code is maintained by Google with contributions from Microsoft to support running in Azure.
 It also depends on another Google maintained repository with Microsoft contributions called [Data Plane Shared Libraries](https://github.com/privacysandbox/data-plane-shared-libraries).
 
-It depends on our [Key Management Service (KMS)](https://github.com/microsoft/azure-privacy-sandbox-kms), which is written by Microsoft, and based on the [Confidential Consortium Framework (CCF)](https://github.com/microsoft/ccf).
-
-The KMS is currently closed source, but with plans to open source.
+It depends on our [Azure Privacy Sandbox Key Management Service (KMS)](https://github.com/microsoft/azure-privacy-sandbox-kms), which is written by Microsoft, and based on the [Confidential Consortium Framework (CCF)](https://github.com/microsoft/ccf).
 
 ## Table of Contents
 
@@ -27,11 +25,13 @@ Opening this repository in a codespace or opening the [devcontainer](.devcontain
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=740915196&skip_quickstart=true&machine=premiumLinux&geo=EuropeWest)
 
+We suggest using a large (32 core) instance as building some parts takes a while.
+
 Alternatively, you can run the parts of the devcontainer [Dockerfile](.devcontainer/Dockerfile) manually to setup your environment.
 
 ### Initial Setup
 
-To setup a directory with the B&A and KMS code, run [setup.sh](scripts/setup.sh)
+To setup a directory with the B&A and KMS code, run [setup.sh](scripts/setup.sh). This takes a couple of minutes.
 
 ```
 ./scripts/setup.sh
@@ -55,7 +55,7 @@ This does the following:
 
 ### Building
 
-To build the demo, run [build.sh](scripts/build.sh)
+To build the demo, run [build.sh](scripts/build.sh). This can take a while, especially the first time. We recommend using a Bazel remote cache.
 ```
 ./scripts/build.sh
 ```
@@ -68,6 +68,8 @@ This builds the KMS and the Bidding and Auction server code.
 |------|-------------|---------|
 | `DEMO_WORKSPACE` | `~/demo` | Path to the directory where the KMS and B&A code to be built is |
 | `USE_CBUILD` | `1` | Whether to use CBuild for building B&A Services, uses local Bazel if not 1 |
+
+Note that `USE_CBUILD` is set to 0 for codespace builds using [this dockerfile](.devcontainer/Dockerfile)
 
 ### Running
 

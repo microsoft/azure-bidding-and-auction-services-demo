@@ -14,11 +14,11 @@ if [ -z "$KMS_REV" ]; then
 fi
 
 if [ -z "$BA_REV" ]; then
-    BA_REV="takurosato/remove-internal-changes"
+    BA_REV="add-azure-support"
 fi
 
 if [ -z "$DATA_PLANE_REV" ]; then
-    DATA_PLANE_REV="takurosato/remove-internal-changes"
+    DATA_PLANE_REV="add-azure-support"
 fi
 
 REPO_PATH=$(realpath $(dirname "$0")/..)

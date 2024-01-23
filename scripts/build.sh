@@ -20,7 +20,7 @@ fi
 (
     cd $DEMO_WORKSPACE/bidding-auction-servers
     if [ $USE_CBUILD -eq 1 ]; then
-        BAZEL="builder/tools/bazel-debian"
+        BAZEL="builders/tools/bazel-debian"
     else
         BAZEL="bazel"
     fi

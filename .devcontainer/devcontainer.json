@@ -18,7 +18,10 @@
             "extensions": [
                 "eamodio.gitlens",
                 "GitHub.copilot"
-            ]
+            ],
+            "settings": {
+                "search.useIgnoreFiles": false
+            }
         }
     }
 }

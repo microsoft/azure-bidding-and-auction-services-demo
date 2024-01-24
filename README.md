@@ -54,7 +54,7 @@ This does the following:
 
 | Name | Default | Description |
 |------|-------------|---------|
-| `DEMO_WORKSPACE` | `~/demo` | Path to the directory where `setup.sh` will checkout the KMS and B&A code |
+| `DEMO_WORKSPACE` | `./workspaces/demo` | Path to the directory where `setup.sh` will checkout the KMS and B&A code |
 | `CCF_VERSION` | `5.0.0-dev10` | Version of CCF to run the KMS against |
 | `KMS_REV` | `main` | Revision of the KMS to checkout |
 | `BA_REV` | `main` | Revision of the B&A Services to checkout |
@@ -74,7 +74,7 @@ This builds the KMS and the Bidding and Auction server code. On a 32 core machin
 
 | Name | Default | Description |
 |------|-------------|---------|
-| `DEMO_WORKSPACE` | `~/demo` | Path to the directory where the KMS and B&A code to be built is |
+| `DEMO_WORKSPACE` | `./workspaces/demo` | Path to the directory where the KMS and B&A code to be built is |
 | `USE_CBUILD` | `1` | Whether to use CBuild for building B&A Services, uses local Bazel if not 1 |
 
 Bidding and Auction server code defaults to using CBuild to avoid manual dependency setup. The devcontainer and by extension codespace set this to 0 as Cbuild doesn't work inside a container.
@@ -92,7 +92,7 @@ This runs the KMS and the Bidding and Auction servers. While this is running you
 
 | Name | Default | Description |
 |------|-------------|---------|
-| `DEMO_WORKSPACE` | `~/demo` | Path to the directory where the KMS and B&A code to be run is |
+| `DEMO_WORKSPACE` | `./workspaces/demo` | Path to the directory where the KMS and B&A code to be run is |
 
 ### Issuing Requests
 You can issue requests with [request.sh](scripts/request.sh).
@@ -108,7 +108,7 @@ TARGET_SERVICE=sfe REQUEST_PATH=requests/select_ads_request.json ./scripts/reque
 
 | Name | Default | Description |
 |------|-------------|---------|
-| `DEMO_WORKSPACE` | `~/demo` | Path to the directory where the running KMS and B&A code is |
+| `DEMO_WORKSPACE` | `./workspaces/demo` | Path to the directory where the running KMS and B&A code is |
 | `TARGET_SERVICE` | `bfe` | The service to send the request to |
 | `REQUEST_PATH` | `requests/get_bids_request.json` | The path to the request to send (relative to repository root) |
 

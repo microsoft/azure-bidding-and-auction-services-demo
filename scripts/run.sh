@@ -2,7 +2,7 @@
 # Licensed under the MIT license.
 
 if [ -z "$DEMO_WORKSPACE" ]; then
-    DEMO_WORKSPACE=~/demo
+    DEMO_WORKSPACE=./workspaces/demo
 fi
 
 REPO_PATH=$(realpath $(dirname "$0")/..)

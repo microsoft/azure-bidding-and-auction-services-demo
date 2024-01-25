@@ -121,3 +121,6 @@ export SFE_TLS_CERT=""
 export AUCTION_EGRESS_TLS=""
 export BUYER_EGRESS_TLS=""
 export SFE_PUBLIC_KEYS_ENDPOINTS="{\"AZURE\": \"https://127.0.0.1:8000/app/listpubkeys\"}"
+
+# Azure specific options
+export KMS_UNWRAP_URL="https://127.0.0.1:8000/app/unwrapKey?fmt=tink"

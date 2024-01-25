@@ -50,6 +50,8 @@ This does the following:
 - Checks out the Key Management System
 - Checks out the Microsoft fork of the Bidding and Auction Servers and the Data Plane Shared Libraries
 
+*NOTE: These repositories are checked out with HTTP and are therefore read only. To have write access, change the remote to SSH and setup your key as usual.*
+
 #### Configurable Envionment Variables
 
 | Name | Default | Description |

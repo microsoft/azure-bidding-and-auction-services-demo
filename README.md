@@ -33,9 +33,13 @@ Opening in a codespace will automatically have all required dependencies, we rec
 
 Opening the repository in the [devcontainer](.devcontainer/devcontainer.json) will also automatically have all required dependencies
 
-#### Manually
+#### Azure Ubuntu 20.04 VM
 
-You can refer to the [Dockerfile](.devcontainer/Dockerfile) which the devcontainer is built with to install all dependencies manually
+Install the dependencies and proceed with the subsequent instructions below.
+
+```
+./scripts/install_dependencies_vm.sh
+```
 
 ### Initial Setup
 
@@ -63,7 +67,8 @@ This does the following:
 
 ### Building
 
-To build the demo, run [build.sh](scripts/build.sh).
+To build the demo, run [build.sh](scripts/build.sh). If you're running inside a VM, it takes a few hours for the first build, subsequent builds will be faster as it's cached.
+
 ```
 ./scripts/build.sh
 ```

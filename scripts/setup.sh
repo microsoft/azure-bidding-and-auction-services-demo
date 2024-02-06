@@ -24,14 +24,16 @@ fi
 REPO_PATH=$(realpath $(dirname "$0")/..)
 
 # Install CCF
-(
+if [ ! -d "/opt/ccf_virtual"]; then
+  (
     cd /tmp
     wget https://github.com/microsoft/CCF/releases/download/ccf-${CCF_VERSION}/ccf_virtual_${CCF_VERSION//-/_}_amd64.deb -O ccf_virtual_${CCF_VERSION//-/_}_amd64.deb
     sudo apt-get update && sudo apt install -y ./ccf_virtual_${CCF_VERSION//-/_}_amd64.deb
     /opt/ccf_virtual/getting_started/setup_vm/run.sh \
         /opt/ccf_virtual/getting_started/setup_vm/app-dev.yml \
         --extra-vars "platform=virtual" --extra-vars "clang_version=15"
-)
+  )
+fi
 
 # Checkout KMS code
 if [ ! -d "$DEMO_WORKSPACE/azure-privacy-sandbox-kms" ]; then

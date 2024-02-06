@@ -7,16 +7,12 @@ fi
 
 REPO_PATH=$(realpath $(dirname "$0")/..)
 
-# Check port 8000 is free
-if lsof -i :8000 > /dev/null 2>&1; then
-    echo "Port 8000 is not free, please stop any process using it and try again"
-    exit 1
-fi
-
 # Start KMS
 (
     cd $DEMO_WORKSPACE/azure-privacy-sandbox-kms
-    env -i PATH=$PATH /opt/ccf_virtual/bin/sandbox.sh --js-app-bundle ./dist/ --initial-member-count 3 --initial-user-count 1 --constitution ./governance/constitution/kms_actions.js -v --http2 &
+    make stop-all
+    #env -i PATH=$PATH /opt/ccf_virtual/bin/sandbox.sh --js-app-bundle ./dist/ --initial-member-count 3 --initial-user-count 1 --constitution ./governance/constitution/kms_actions.js -v --http2 &
+    env -i PATH=$PATH WORKSPACE=$WORKSPACE RUN_BACK=true make start-host-idp
 )
 
 # Wait for the KMS to start
@@ -31,7 +27,7 @@ sleep 3 # Allow CCF to finish spinning up
 echo "Adding Key to KMS..."
 (
     cd $DEMO_WORKSPACE/azure-privacy-sandbox-kms
-    env -i PATH=$PATH make setup
+    env -i PATH=$PATH WORKSPACE=$WORKSPACE make setup
 )
 
 # Run the B&A servers

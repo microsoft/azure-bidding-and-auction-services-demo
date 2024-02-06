@@ -10,7 +10,7 @@ if [ -z "$CCF_VERSION" ]; then
 fi
 
 if [ -z "$KMS_REV" ]; then
-    KMS_REV="main"
+    KMS_REV="beejones/add-jwt-support"
 fi
 
 if [ -z "$BA_REV" ]; then
